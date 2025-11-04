@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookReader - Nền tảng đọc sách trực tuyến</title>
+    <meta name="description" content="Thư viện sách điện tử lớn nhất Việt Nam - Đọc sách online miễn phí">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/homepage.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <h2><i class="fas fa-book-open"></i> BookReader</h2>
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-home"></i> Trang Chủ
+                    </a>
+                    <a href="book-list.html" class="nav-link">
+                        <i class="fas fa-th-large"></i> Thể loại
+                    </a>
+                    <a href="user-library.html" class="nav-link">
+                        <i class="fas fa-bookmark"></i> Thư viện
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-phone"></i> Hỗ trợ
+                    </a>
+                </div>  
+                <div class="nav-auth">
+                    <button class="btn-login" data-action="login">Đăng nhập</button>
+                    <button class="btn-register" data-action="register">Đăng ký</button>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Slider Banner -->
+    <section class="hero-slider-section">
+        <div class="hero-slider-container">
+            <div class="hero-slide active" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%), url('../assets/images/hero-bg-1.jpg'); background-size: cover; background-position: center;">
+                <div class="container">
+                    <div class="hero-slide-content">
+                        <div class="hero-badge">HOT</div>
+                        <h1 class="hero-slide-title">One Piece - Vua Hải Tặc</h1>
+                        <p class="hero-slide-description">Cuộc phiêu lưu của Luffy và băng Mũ Rơm trong hành trình tìm kiếm kho báu One Piece. Chương mới nhất đã được cập nhật!</p>
+                        <div class="hero-slide-stats">
+                            <span><i class="fas fa-eye"></i> 4.5M lượt đọc</span>
+                            <span><i class="fas fa-star"></i> 4.9 Đánh giá</span>
+                            <span><i class="fas fa-book-open"></i> Chương 1095</span>
+                        </div>
+                        <div class="hero-slide-actions">
+                            <a href="book-detail.html?id=5" class="btn-hero-primary">
+                                <i class="fas fa-book-reader"></i> Đọc ngay
+                            </a>
+                            <a href="book-detail.html?id=5" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide" style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.95) 0%, rgba(153, 27, 27, 0.95) 100%), url('../assets/images/hero-bg-2.jpg'); background-size: cover; background-position: center;">
+                <div class="container">
+                    <div class="hero-slide-content">
+                        <div class="hero-badge trending">THỊNH HÀNH</div>
+                        <h1 class="hero-slide-title">Attack on Titan</h1>
+                        <p class="hero-slide-description">Cuộc chiến sinh tồn của nhân loại trước những người khổng lồ ăn thịt người. Một tác phẩm kinh điển không thể bỏ qua!</p>
+                        <div class="hero-slide-stats">
+                            <span><i class="fas fa-eye"></i> 2.3M lượt đọc</span>
+                            <span><i class="fas fa-star"></i> 4.9 Đánh giá</span>
+                            <span><i class="fas fa-book-open"></i> Chương 139</span>
+                        </div>
+                        <div class="hero-slide-actions">
+                            <a href="book-detail.html?id=1" class="btn-hero-primary">
+                                <i class="fas fa-book-reader"></i> Đọc ngay
+                            </a>
+                            <a href="book-detail.html?id=1" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide" style="background: linear-gradient(135deg, rgba(5, 150, 105, 0.95) 0%, rgba(4, 120, 87, 0.95) 100%), url('../assets/images/hero-bg-3.jpg'); background-size: cover; background-position: center;">
+                <div class="container">
+                    <div class="hero-slide-content">
+                        <div class="hero-badge new">MỚI CẬP NHẬT</div>
+                        <h1 class="hero-slide-title">Demon Slayer</h1>
+                        <p class="hero-slide-description">Hành trình của Tanjiro trong cuộc chiến chống lại các con quỷ để cứu em gái mình. Cốt truyện hấp dẫn, nghệ thuật đẹp mắt!</p>
+                        <div class="hero-slide-stats">
+                            <span><i class="fas fa-eye"></i> 1.9M lượt đọc</span>
+                            <span><i class="fas fa-star"></i> 4.8 Đánh giá</span>
+                            <span><i class="fas fa-book-open"></i> Chương 205</span>
+                        </div>
+                        <div class="hero-slide-actions">
+                            <a href="book-detail.html?id=2" class="btn-hero-primary">
+                                <i class="fas fa-book-reader"></i> Đọc ngay
+                            </a>
+                            <a href="book-detail.html?id=2" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="slider-arrow prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-arrow next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+            
+            <div class="slider-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+            </div>
+        </div>
+        
+        <!-- Quick Search Bar Below Hero -->
+        <div class="quick-search-bar">
+            <div class="container">
+                <div class="search-bar-content">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="heroSearchInput" placeholder="Tìm kiếm truyện, tác giả, thể loại...">
+                    </div>
+                    <button class="btn-search-quick" id="heroSearchBtn">
+                        <span>Tìm kiếm</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Book Section -->
+    <section class="weekly-book-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2 class="section-title-large">
+                    <i class="fas fa-trophy"></i>
+                    Sách Đề Cử Tuần Này
+                </h2>
+                <p class="section-subtitle">Những tác phẩm được yêu thích nhất tuần qua</p>
+            </div>
+            
+            <div class="weekly-book-grid">
+                <!-- Featured Book - Large -->
+                <div class="weekly-featured-book">
+                    <div class="featured-book-image">
+                        <img src="../assets/images/one-piece.jpg" alt="One Piece" 
+                             onerror="this.style.background='linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)'; this.innerHTML='<div style=color:white;padding:150px 20px;text-align:center;font-size:48px;>🏴‍☠️</div>'">
+                        <div class="featured-badge-large">
+                            <i class="fas fa-crown"></i> BOOK OF THE WEEK
+                        </div>
+                        <div class="book-rating-overlay">
+                            <i class="fas fa-star"></i> 4.9 / 5.0
+                        </div>
+                    </div>
+                    <div class="featured-book-content">
+                        <h3 class="featured-book-title">One Piece - Vua Hải Tặc</h3>
+                        <p class="featured-book-author">
+                            <i class="fas fa-user-edit"></i> Eiichiro Oda
+                        </p>
+                        <p class="featured-book-description">
+                            Cuộc phiêu lưu vĩ đại của Luffy và băng Mũ Rơm trong hành trình tìm kiếm kho báu huyền thoại One Piece. Một tác phẩm kinh điển với hơn 1000 chương đầy kịch tính và cảm động.
+                        </p>
+                        <div class="featured-book-stats">
+                            <div class="stat-item-inline">
+                                <i class="fas fa-eye"></i>
+                                <span>4.5M lượt đọc</span>
+                            </div>
+                            <div class="stat-item-inline">
+                                <i class="fas fa-book-open"></i>
+                                <span>1095 Chương</span>
+                            </div>
+                            <div class="stat-item-inline">
+                                <i class="fas fa-heart"></i>
+                                <span>850K yêu thích</span>
+                            </div>
+                        </div>
+                        <div class="featured-book-actions">
+                            <a href="book-detail.html?id=5" class="btn-featured-read">
+                                <i class="fas fa-book-reader"></i> Đọc ngay
+                            </a>
+                            <a href="book-detail.html?id=5" class="btn-featured-detail">
+                                <i class="fas fa-info-circle"></i> Chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Side Books List -->
+                <div class="weekly-side-books">
+                    <div class="side-book-item">
+                        <div class="side-book-rank top-2">2</div>
+                        <div class="side-book-cover">
+                            <img src="../assets/images/attack-on-titan.jpg" alt="Attack on Titan">
+                        </div>
+                        <div class="side-book-info">
+                            <h4>Attack on Titan</h4>
+                            <p class="side-book-author">Hajime Isayama</p>
+                            <div class="side-book-meta">
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                                <span><i class="fas fa-eye"></i> 2.3M</span>
+                            </div>
+                        </div>
+                        <a href="book-detail.html?id=1" class="btn-side-book">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="side-book-item">
+                        <div class="side-book-rank top-3">3</div>
+                        <div class="side-book-cover">
+                            <img src="../assets/images/demon-slayer.jpg" alt="Demon Slayer">
+                        </div>
+                        <div class="side-book-info">
+                            <h4>Demon Slayer</h4>
+                            <p class="side-book-author">Koyoharu Gotouge</p>
+                            <div class="side-book-meta">
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                                <span><i class="fas fa-eye"></i> 1.9M</span>
+                            </div>
+                        </div>
+                        <a href="book-detail.html?id=2" class="btn-side-book">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="side-book-item">
+                        <div class="side-book-rank">4</div>
+                        <div class="side-book-cover">
+                            <img src="../assets/images/jujutsu-kaisen.jpg" alt="Jujutsu Kaisen">
+                        </div>
+                        <div class="side-book-info">
+                            <h4>Jujutsu Kaisen</h4>
+                            <p class="side-book-author">Gege Akutami</p>
+                            <div class="side-book-meta">
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                                <span><i class="fas fa-eye"></i> 2.1M</span>
+                            </div>
+                        </div>
+                        <a href="book-detail.html?id=4" class="btn-side-book">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="side-book-item">
+                        <div class="side-book-rank">5</div>
+                        <div class="side-book-cover">
+                            <img src="../assets/images/spy-family.jpg" alt="Spy x Family">
+                        </div>
+                        <div class="side-book-info">
+                            <h4>Spy x Family</h4>
+                            <p class="side-book-author">Tatsuya Endo</p>
+                            <div class="side-book-meta">
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                                <span><i class="fas fa-eye"></i> 1.7M</span>
+                            </div>
+                        </div>
+                        <a href="book-detail.html?id=3" class="btn-side-book">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section - 3 Columns -->
+    <section class="main-content">
+        <div class="container">
+            <div class="content-grid-3col">
+                
+                <!-- Column 1: Truyện mới cập nhật -->
+                <div class="content-column">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-clock"></i>
+                            Truyện mới cập nhật
+                        </h2>
+                    </div>
+                    <div class="story-list-vertical">
+                        <div class="story-item-compact">
+                            <div class="story-thumb">
+                                <img src="../assets/images/attack-on-titan.jpg" alt="Attack on Titan" 
+                                     onerror="this.style.background='linear-gradient(135deg, #dc2626 0%, #991b1b 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>⚔️</div>'">
+                            </div>
+                            <div class="story-details">
+                                <h4>Attack on Titan</h4>
+                                <p class="author">Hajime Isayama</p>
+                                <div class="story-meta-mini">
+                                    <span class="chapter">Chương 139</span>
+                                    <span class="time">2 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="story-item-compact">
+                            <div class="story-thumb">
+                                <img src="../assets/images/demon-slayer.jpg" alt="Demon Slayer" 
+                                     onerror="this.style.background='linear-gradient(135deg, #059669 0%, #047857 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>⚔️</div>'">
+                            </div>
+                            <div class="story-details">
+                                <h4>Demon Slayer</h4>
+                                <p class="author">Koyoharu Gotouge</p>
+                                <div class="story-meta-mini">
+                                    <span class="chapter">Chương 205</span>
+                                    <span class="time">5 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="story-item-compact">
+                            <div class="story-thumb">
+                                <img src="../assets/images/spy-family.jpg" alt="Spy x Family" 
+                                     onerror="this.style.background='linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>🕵️</div>'">
+                            </div>
+                            <div class="story-details">
+                                <h4>Spy x Family</h4>
+                                <p class="author">Tatsuya Endo</p>
+                                <div class="story-meta-mini">
+                                    <span class="chapter">Chương 89</span>
+                                    <span class="time">1 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="story-item-compact">
+                            <div class="story-thumb">
+                                <img src="../assets/images/jujutsu-kaisen.jpg" alt="Jujutsu Kaisen" 
+                                     onerror="this.style.background='linear-gradient(135deg, #1f2937 0%, #111827 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>👻</div>'">
+                            </div>
+                            <div class="story-details">
+                                <h4>Jujutsu Kaisen</h4>
+                                <p class="author">Gege Akutami</p>
+                                <div class="story-meta-mini">
+                                    <span class="chapter">Chương 245</span>
+                                    <span class="time">1 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-item-compact">
+                            <div class="story-thumb">
+                                <img src="../assets/images/tokyo-ghoul.jpg" alt="Tokyo Ghoul" 
+                                     onerror="this.style.background='linear-gradient(135deg, #374151 0%, #1f2937 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>👹</div>'">
+                            </div>
+                            <div class="story-details">
+                                <h4>Tokyo Ghoul</h4>
+                                <p class="author">Sui Ishida</p>
+                                <div class="story-meta-mini">
+                                    <span class="chapter">Chương 143</span>
+                                    <span class="time">2 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Truyện HOT tuần -->
+                <div class="content-column">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-fire"></i>
+                            Truyện HOT tuần
+                        </h2>
+                    </div>
+                    <div class="story-list-vertical">
+                        <div class="story-item-compact hot-item">
+                            <div class="rank-badge top-1">1</div>
+                            <div class="story-thumb">
+                                <img src="../assets/images/story1.jpg" alt="Conan" 
+                                     onerror="this.style.background='linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>🕵️</div>'">
+                            </div>
+                            <div class="story-details">
+                                <h4>Conan - Thám tử lừng danh</h4>
+                                <p class="author">Gosho Aoyama</p>
+                                <div class="story-stats-mini">
+                                    <span><i class="fas fa-eye"></i> 2.5M</span>
+                                    <span><i class="fas fa-star"></i> 4.9</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-item-compact hot-item">
+                            <div class="rank-badge top-2">2</div>
+                            <div class="story-thumb">
+                                <img src="../assets/images/story2.jpg" alt="Douluo" 
+                                     onerror="this.style.background='linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>⚔️</div>'">
+                            </div>
+                            <div class="story-details">
+                                <h4>Douluo Đại Lục</h4>
+                                <p class="author">Đường Gia Tam Thiếu</p>
+                                <div class="story-stats-mini">
+                                    <span><i class="fas fa-eye"></i> 1.8M</span>
+                                    <span><i class="fas fa-star"></i> 4.7</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-item-compact hot-item">
+                            <div class="rank-badge top-3">3</div>
+                            <div class="story-thumb">
+                                <img src="../assets/images/story3.jpg" alt="Naruto" 
+                                     onerror="this.style.background='linear-gradient(135deg, #ff6b35 0%, #f7931e 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>🍥</div>'">
+                            </div>
+                            <div class="story-details">
+                                <h4>Naruto - Nhẫn giả số một</h4>
+                                <p class="author">Masashi Kishimoto</p>
+                                <div class="story-stats-mini">
+                                    <span><i class="fas fa-eye"></i> 3.2M</span>
+                                    <span><i class="fas fa-star"></i> 4.8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-item-compact">
+                            <div class="rank-badge">4</div>
+                            <div class="story-thumb">
+                                <img src="../assets/images/one-piece.jpg" alt="One Piece" 
+                                     onerror="this.style.background='linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>🏴‍☠️</div>'">
+                            </div>
+                            <div class="story-details">
+                                <h4>One Piece - Vua Hải Tặc</h4>
+                                <p class="author">Eiichiro Oda</p>
+                                <div class="story-stats-mini">
+                                    <span><i class="fas fa-eye"></i> 4.1M</span>
+                                    <span><i class="fas fa-star"></i> 4.9</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-item-compact">
+                            <div class="rank-badge">5</div>
+                            <div class="story-thumb">
+                                <img src="../assets/images/bleach.jpg" alt="Bleach" 
+                                     onerror="this.style.background='linear-gradient(135deg, #f97316 0%, #ea580c 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>⚔️</div>'">
+                            </div>
+                            <div class="story-details">
+                                <h4>Bleach</h4>
+                                <p class="author">Tite Kubo</p>
+                                <div class="story-stats-mini">
+                                    <span><i class="fas fa-eye"></i> 2.1M</span>
+                                    <span><i class="fas fa-star"></i> 4.6</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Truyện nổi bật -->
+                <div class="content-column">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-bookmark"></i>
+                            Truyện nổi bật
+                        </h2>
+                    </div>
+                    <div class="story-list-vertical">
+                        <div class="story-item-compact">
+                            <div class="story-thumb">
+                                <img src="../assets/images/toi-thay-hoa-vang.jpg" alt="Tôi thấy hoa vàng" 
+                                     onerror="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>📖</div>'">
+                                <div class="featured-badge">HOT</div>
+                            </div>
+                            <div class="story-details">
+                                <h4>Tôi Thấy Hoa Vàng Trên Cỏ Xanh</h4>
+                                <p class="author">Nguyễn Nhật Ánh</p>
+                                <div class="story-stats-mini">
+                                    <span><i class="fas fa-eye"></i> 1.2M</span>
+                                    <span><i class="fas fa-star"></i> 4.8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-item-compact">
+                            <div class="story-thumb">
+                                <img src="../assets/images/mat-biec.jpg" alt="Mắt biếc" 
+                                     onerror="this.style.background='linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>👁️</div>'">
+                                <div class="featured-badge classic">KINH ĐIỂN</div>
+                            </div>
+                            <div class="story-details">
+                                <h4>Mắt Biếc</h4>
+                                <p class="author">Nguyễn Nhật Ánh</p>
+                                <div class="story-stats-mini">
+                                    <span><i class="fas fa-eye"></i> 890K</span>
+                                    <span><i class="fas fa-star"></i> 4.9</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-item-compact">
+                            <div class="story-thumb">
+                                <img src="../assets/images/fullmetal.jpg" alt="Fullmetal Alchemist" 
+                                     onerror="this.style.background='linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>⚗️</div>'">
+                                <div class="featured-badge">HOÀN THÀNH</div>
+                            </div>
+                            <div class="story-details">
+                                <h4>Fullmetal Alchemist</h4>
+                                <p class="author">Hiromu Arakawa</p>
+                                <div class="story-stats-mini">
+                                    <span><i class="fas fa-eye"></i> 1.5M</span>
+                                    <span><i class="fas fa-star"></i> 4.9</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-item-compact">
+                            <div class="story-thumb">
+                                <img src="../assets/images/death-note.jpg" alt="Death Note" 
+                                     onerror="this.style.background='linear-gradient(135deg, #000000 0%, #374151 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>📓</div>'">
+                                <div class="featured-badge trending">THỊNH HÀNH</div>
+                            </div>
+                            <div class="story-details">
+                                <h4>Death Note</h4>
+                                <p class="author">Tsugumi Ohba</p>
+                                <div class="story-stats-mini">
+                                    <span><i class="fas fa-eye"></i> 2.3M</span>
+                                    <span><i class="fas fa-star"></i> 4.8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-item-compact">
+                            <div class="story-thumb">
+                                <img src="../assets/images/hunter.jpg" alt="Hunter x Hunter" 
+                                     onerror="this.style.background='linear-gradient(135deg, #10b981 0%, #059669 100%)'; this.innerHTML='<div style=\'color:white;padding:20px;text-align:center;font-size:12px;\'>🎯</div>'">
+                            </div>
+                            <div class="story-details">
+                                <h4>Hunter x Hunter</h4>
+                                <p class="author">Yoshihiro Togashi</p>
+                                <div class="story-stats-mini">
+                                    <span><i class="fas fa-eye"></i> 1.9M</span>
+                                    <span><i class="fas fa-star"></i> 4.7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section - Riêng biệt -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-th-large"></i>
+                    Thể loại truyện
+                </h2>
+            </div>
+            <div class="category-grid">
+                <!-- Hàng 1 - Thể loại chính -->
+                <a href="book-list.html?category=tieu-thuyet" class="category-card popular" data-category="tieu-thuyet">
+                    <div class="category-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Tiểu thuyết</h3>
+                    <p>Tình cảm, lãng mạn, đời sống</p>
+                    <span class="book-count">1,250+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 156K độc giả</span>
+                    </div>
+                </a>
+                
+                <a href="book-list.html?category=truyen-tranh" class="category-card trending" data-category="truyen-tranh">
+                    <div class="category-icon">
+                        <i class="fas fa-mask"></i>
+                    </div>
+                    <h3>Truyện tranh</h3>
+                    <p>Manga, Manhwa, Comics</p>
+                    <span class="book-count">2,100+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 289K độc giả</span>
+                    </div>
+                </a>
+                
+                <a href="book-list.html?category=kiem-hiep" class="category-card hot" data-category="kiem-hiep">
+                    <div class="category-icon">
+                        <i class="fas fa-sword"></i>
+                    </div>
+                    <h3>Kiếm hiệp</h3>
+                    <p>Võ thuật, giang hồ, anh hùng</p>
+                    <span class="book-count">1,450+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 203K độc giả</span>
+                    </div>
+                </a>
+                
+                <a href="book-list.html?category=light-novel" class="category-card new" data-category="light-novel">
+                    <div class="category-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3>Light Novel</h3>
+                    <p>Nhẹ nhàng, anime, học đường</p>
+                    <span class="book-count">980+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 124K độc giả</span>
+                    </div>
+                </a>
+
+                <!-- Hàng 2 - Thể loại phổ biến -->
+                <a href="book-list.html?category=truyen-trinh-tham" class="category-card" data-category="truyen-trinh-tham">
+                    <div class="category-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Trinh thám</h3>
+                    <p>Bí ẩn, phá án, hồi hộp</p>
+                    <span class="book-count">890+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 98K độc giả</span>
+                    </div>
+                </a>
+
+                <a href="book-list.html?category=fantasy" class="category-card" data-category="fantasy">
+                    <div class="category-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Huyền bí</h3>
+                    <p>Fantasy, ma thuật, phiêu lưu</p>
+                    <span class="book-count">670+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 87K độc giả</span>
+                    </div>
+                </a>
+
+                <a href="book-list.html?category=truyen-teen" class="category-card" data-category="truyen-teen">
+                    <div class="category-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Truyện Teen</h3>
+                    <p>Học đường, tuổi trẻ, thanh xuân</p>
+                    <span class="book-count">1,100+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 145K độc giả</span>
+                    </div>
+                </a>
+
+                <a href="book-list.html?category=kinh-di" class="category-card" data-category="kinh-di">
+                    <div class="category-icon">
+                        <i class="fas fa-ghost"></i>
+                    </div>
+                    <h3>Kinh dị</h3>
+                    <p>Ma quái, rùng rợn, thót tim</p>
+                    <span class="book-count">340+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 45K độc giả</span>
+                    </div>
+                </a>
+
+                <a href="book-list.html?category=hanh-dong" class="category-card" data-category="hanh-dong">
+                    <div class="category-icon">
+                        <i class="fas fa-fist-raised"></i>
+                    </div>
+                    <h3>Hành động</h3>
+                    <p>Đánh đấm, phiêu lưu, mạo hiểm</p>
+                    <span class="book-count">756+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 92K độc giả</span>
+                    </div>
+                </a>
+
+                <a href="book-list.html?category=hai-huoc" class="category-card" data-category="hai-huoc">
+                    <div class="category-icon">
+                        <i class="fas fa-laugh"></i>
+                    </div>
+                    <h3>Hài hước</h3>
+                    <p>Vui nhộn, hài kịch, giải trí</p>
+                    <span class="book-count">523+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 78K độc giả</span>
+                    </div>
+                </a>
+
+                <a href="book-list.html?category=khoa-hoc-vien-tuong" class="category-card" data-category="khoa-hoc-vien-tuong">
+                    <div class="category-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Khoa học viễn tưởng</h3>
+                    <p>Tương lai, robot, không gian</p>
+                    <span class="book-count">412+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 63K độc giả</span>
+                    </div>
+                </a>
+
+                <a href="book-list.html?category=lich-su" class="category-card" data-category="lich-su">
+                    <div class="category-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Lịch sử</h3>
+                    <p>Cổ trang, thời đại, sử thi</p>
+                    <span class="book-count">298+ truyện</span>
+                    <div class="category-stats">
+                        <span class="readers"><i class="fas fa-users"></i> 54K độc giả</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-number" data-count="15000">0</div>
+                    <div class="stat-label">Truyện & Sách</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-count="2500000">0</div>
+                    <div class="stat-label">Độc giả</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-number" data-count="950000000">0</div>
+                    <div class="stat-label">Lượt đọc</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-number" data-count="15000000">0</div>
+                    <div class="stat-label">Yêu thích</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Đăng ký nhận thông báo</h3>
+                    <p>Nhận thông tin về truyện mới, khuyến mãi và tin tức mới nhất từ BookReader</p>
+                </div>
+                <div class="newsletter-form">
+                    <form id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" placeholder="Nhập email của bạn..." required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                                Đăng ký
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-book-open"></i> BookReader</h3>
+                    <p>Nền tảng đọc truyện và sách điện tử hàng đầu Việt Nam, mang đến cho bạn hàng nghìn câu chuyện hấp dẫn.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Thể loại</h4>
+                    <ul>
+                        <li><a href="#categories">Tiểu thuyết</a></li>
+                        <li><a href="#categories">Truyện tranh</a></li>
+                        <li><a href="#categories">Kiếm hiệp</a></li>
+                        <li><a href="#categories">Light Novel</a></li>
+                        <li><a href="#categories">Trinh thám</a></li>
+                        <li><a href="#categories">Xem tất cả</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Dịch vụ</h4>
+                    <ul>
+                        <li><a href="#">Đọc online</a></li>
+                        <li><a href="#">Tải offline</a></li>
+                        <li><a href="#">Gói VIP</a></li>
+                        <li><a href="#">Ứng dụng mobile</a></li>
+                        <li><a href="#">API cho nhà phát triển</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Trung tâm trợ giúp</a></li>
+                        <li><a href="#">Liên hệ hỗ trợ</a></li>
+                        <li><a href="#">Báo cáo lỗi</a></li>
+                        <li><a href="#">Góp ý</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên hệ</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 1900 2468</li>
+                        <li><i class="fas fa-envelope"></i> support@bookreader.vn</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Hà Nội, Việt Nam</li>
+                        <li><i class="fas fa-clock"></i> 24/7 hỗ trợ</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 BookReader. Tất cả quyền được bảo lưu.</p>
+                    <div class="footer-links">
+                        <a href="#">Chính sách</a>
+                        <a href="#">Điều khoản</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

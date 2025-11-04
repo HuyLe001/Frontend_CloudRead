@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết truyện - BookReader</title>
+    <meta name="description" content="Đọc và tải truyện hay nhất tại BookReader">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/homepage.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <h2><i class="fas fa-book-open"></i> BookReader</h2>
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Trang Chủ
+                    </a>
+                    <a href="book-list.html" class="nav-link">
+                        <i class="fas fa-th-large"></i> Thể loại
+                    </a>
+                    <a href="user-library.html" class="nav-link">
+                        <i class="fas fa-bookmark"></i> Thư viện
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-phone"></i> Hỗ trợ
+                    </a>
+                </div>
+                <div class="nav-auth">
+                    <button class="btn-login" data-action="login">Đăng nhập</button>
+                    <button class="btn-register" data-action="register">Đăng ký</button>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Trang chủ</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="index.html#categories" id="breadcrumbCategory">Thể loại</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current" id="breadcrumbTitle">Chi tiết truyện</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Story Detail -->
+    <section class="story-detail">
+        <div class="container">
+            <div class="story-detail-grid">
+                <!-- Story Cover & Quick Actions -->
+                <div class="story-cover-section">
+                    <div class="story-cover-wrapper">
+                        <div class="story-cover-large">
+                            <img src="../assets/images/story-placeholder.jpg" alt="Story Cover" id="storyCover" 
+                                 onerror="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'; this.innerHTML='<div style=\'color:white;padding:80px 20px;text-align:center;font-size:16px;\'>📖<br>Ảnh bìa truyện</div>'">
+                            <div class="story-badge" id="storyBadge">HOT</div>
+                        </div>
+                        
+                        <!-- Quick Actions -->
+                        <div class="quick-actions">
+                            <button class="btn-read-now" id="readNowBtn">
+                                <i class="fas fa-play"></i>
+                                Đọc ngay
+                            </button>
+                            <div class="action-buttons">
+                                <button class="action-btn" id="addToLibrary" title="Thêm vào thư viện">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="action-btn" id="addToFavorites" title="Yêu thích">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="action-btn" id="shareStory" title="Chia sẻ">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button class="action-btn" id="downloadStory" title="Tải offline">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Information -->
+                <div class="story-info-section">
+                    <div class="story-header">
+                        <h1 class="story-title" id="storyTitle">Conan - Thám Tử Lừng Danh</h1>
+                        <div class="story-status-badge" id="storyStatus">Đang cập nhật</div>
+                    </div>
+
+                    <div class="story-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-user-edit"></i>
+                            <span class="meta-label">Tác giả:</span>
+                            <span class="meta-value" id="storyAuthor">Gosho Aoyama</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-tags"></i>
+                            <span class="meta-label">Thể loại:</span>
+                            <div class="story-tags" id="storyTags">
+                                <span class="tag">Trinh thám</span>
+                                <span class="tag">Manga</span>
+                                <span class="tag">Hành động</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-list"></i>
+                            <span class="meta-label">Số chương:</span>
+                            <span class="meta-value" id="chapterCount">1000+ chương</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span class="meta-label">Cập nhật:</span>
+                            <span class="meta-value" id="lastUpdate">2 giờ trước</span>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="story-statistics">
+                        <div class="stat-item">
+                            <i class="fas fa-star"></i>
+                            <span class="stat-value" id="storyRating">4.9</span>
+                            <span class="stat-label">Đánh giá</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-eye"></i>
+                            <span class="stat-value" id="storyViews">2.5M</span>
+                            <span class="stat-label">Lượt đọc</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-heart"></i>
+                            <span class="stat-value" id="storyFavorites">89K</span>
+                            <span class="stat-label">Yêu thích</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-comments"></i>
+                            <span class="stat-value" id="storyComments">12.3K</span>
+                            <span class="stat-label">Bình luận</span>
+                        </div>
+                    </div>
+
+                    <!-- Story Description -->
+                    <div class="story-description">
+                        <h3><i class="fas fa-align-left"></i> Tóm tắt nội dung</h3>
+                        <div class="description-content" id="storyDescription">
+                            <p>Shinichi Kudo, một thám tử học sinh trung học 17 tuổi, thường giúp cảnh sát giải quyết các vụ án. Trong lúc theo dõi giao dịch đáng ngờ, anh bị thành viên của tổ chức áo đen phát hiện và cho uống thuốc độc thử nghiệm...</p>
+                            <p>Thay vì chết, thuốc đã làm cơ thể anh bị teo nhỏ thành hình dạng của một đứa trẻ 7 tuổi. Giữ bí mật về danh tính thật của mình, anh sống với tên Conan Edogawa và được nhận nuôi bởi Ran Mouri và cha cô.</p>
+                            <div class="description-toggle">
+                                <button class="toggle-btn" id="toggleDescription">
+                                    <span class="show-more">Xem thêm</span>
+                                    <span class="show-less">Thu gọn</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter List -->
+    <section class="chapter-list-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-list-ol"></i>
+                    Danh sách chương
+                </h2>
+                <div class="chapter-controls">
+                    <div class="sort-options">
+                        <button class="sort-btn active" data-sort="asc">
+                            <i class="fas fa-sort-numeric-down"></i>
+                            Cũ nhất
+                        </button>
+                        <button class="sort-btn" data-sort="desc">
+                            <i class="fas fa-sort-numeric-up"></i>
+                            Mới nhất
+                        </button>
+                    </div>
+                    <button class="view-toggle-btn" id="viewToggle">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="chapter-grid" id="chapterList">
+                <!-- Chapters sẽ được load bằng JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-comments"></i>
+                    Bình luận từ độc giả
+                    <span class="comment-count">(1,247)</span>
+                </h2>
+            </div>
+
+            <!-- Comment Form -->
+            <div class="comment-form-wrapper">
+                <form class="comment-form" id="commentForm">
+                    <div class="comment-input">
+                        <img src="../assets/images/user-default.jpg" alt="User" class="user-avatar"
+                             onerror="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'; this.innerHTML='<i class=\'fas fa-user\' style=\'color:white;\'></i>'">
+                        <textarea placeholder="Chia sẻ cảm nghĩ của bạn về truyện này..." required></textarea>
+                    </div>
+                    <div class="comment-actions">
+                        <div class="rating-input">
+                            <span>Đánh giá:</span>
+                            <div class="star-rating">
+                                <input type="radio" name="rating" value="5" id="star5">
+                                <label for="star5"><i class="fas fa-star"></i></label>
+                                <input type="radio" name="rating" value="4" id="star4">
+                                <label for="star4"><i class="fas fa-star"></i></label>
+                                <input type="radio" name="rating" value="3" id="star3">
+                                <label for="star3"><i class="fas fa-star"></i></label>
+                                <input type="radio" name="rating" value="2" id="star2">
+                                <label for="star2"><i class="fas fa-star"></i></label>
+                                <input type="radio" name="rating" value="1" id="star1">
+                                <label for="star1"><i class="fas fa-star"></i></label>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-comment-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Gửi bình luận
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Comments List -->
+            <div class="comments-list" id="commentsList">
+                <!-- Comments sẽ được load bằng JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Stories -->
+    <section class="related-stories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-bookmark"></i>
+                    Truyện liên quan
+                </h2>
+                <a href="index.html#featured-books" class="view-all">Xem thêm <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="related-stories-grid" id="relatedStories">
+                <!-- Related stories sẽ được load bằng JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-book-open"></i> BookReader</h3>
+                    <p>Nền tảng đọc truyện và sách điện tử hàng đầu Việt Nam, mang đến cho bạn hàng nghìn câu chuyện hấp dẫn.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Thể loại</h4>
+                    <ul>
+                        <li><a href="index.html#categories">Tiểu thuyết</a></li>
+                        <li><a href="index.html#categories">Truyện tranh</a></li>
+                        <li><a href="index.html#categories">Kiếm hiệp</a></li>
+                        <li><a href="index.html#categories">Light Novel</a></li>
+                        <li><a href="index.html#categories">Trinh thám</a></li>
+                        <li><a href="index.html#categories">Xem tất cả</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Trung tâm trợ giúp</a></li>
+                        <li><a href="#">Liên hệ hỗ trợ</a></li>
+                        <li><a href="#">Báo cáo lỗi</a></li>
+                        <li><a href="#">Góp ý</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên hệ</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 1900 2468</li>
+                        <li><i class="fas fa-envelope"></i> support@bookreader.vn</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Hà Nội, Việt Nam</li>
+                        <li><i class="fas fa-clock"></i> 24/7 hỗ trợ</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 BookReader. Tất cả quyền được bảo lưu.</p>
+                    <div class="footer-links">
+                        <a href="#">Chính sách</a>
+                        <a href="#">Điều khoản</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/book-detail.js"></script>
+</body>
+</html>
